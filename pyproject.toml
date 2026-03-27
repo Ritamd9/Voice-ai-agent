@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-ai-agent"
+version = "0.1.0"
+description = "Voice-enabled RAG assistant for PDF documents using Streamlit, Qdrant, and OpenAI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastembed==0.7.3",
+    "langchain==1.0.3",
+    "langchain-community==0.4.1",
+    "langchain-openai==1.0.2",
+    "langchain-text-splitters==1.0.0",
+    "openai==2.7.1",
+    "openai-agents==0.4.2",
+    "pypdf>=4.0.0,<6.0.0",
+    "python-dotenv>=1.0.1,<2.0.0",
+    "qdrant-client==1.15.1",
+    "streamlit==1.51.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0,<9.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
